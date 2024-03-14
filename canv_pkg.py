@@ -1,10 +1,10 @@
 from tkinter import *
 class Button_Canvas:
     ## ------- 画布按钮类 ------- ##
-    def __init__(self,canvas:Canvas,x1:int,y1:int,x2:int,y2:int,text:str,fontsize:int=15,d_outline:str='gray',d_fill:str='gray',image:PhotoImage=None,func=any):
+    def __init__(self,canvas:Canvas,x1:int,y1:int,x2:int,y2:int,text:str,fontsize:int=15,d_outline:str='gray',d_fill:str='gray',image:PhotoImage=None,func=any,tag=any):
         self.canvas = canvas#父控件
         self.value = text
-        self.tag = text
+        self.tag = tag
         self.func=func
 
         self.x1 = x1#左上角x坐标
@@ -18,8 +18,8 @@ class Button_Canvas:
         self.tex = self.canvas.create_text((x1+x2)//2,(y1+y2)//2,text=self.value,font=('楷体',fontsize),justify='center',fill=self.d_fill,tag=self.tag)
         self.line=self.canvas.create_line(x1,(y1+y2)/2,x2,(y1+y2)/2,width=y2-y1,fill='',tag=self.tag)
         
-        canvas.tag_bind(self.tag,'<Button-1>',lambda event:self.focus_on(self.func))# 关联鼠标点击事件
-        canvas.tag_bind(self.tag,'<Motion>',lambda event:self.Move(event,'black'))# 关联鼠标经过事件
+        canvas.tag_bind(self.tag[1],'<Button-1>',lambda event:self.focus_on(self.func))# 关联鼠标点击事件
+        canvas.tag_bind(self.tag[1],'<Motion>',lambda event:self.Move(event,'black'))# 关联鼠标经过事件
         
         if image != None:
             self.canvas.create_image((x1+x2)//2,(y1+y2)//2,image=image)
