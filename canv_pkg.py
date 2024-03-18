@@ -1,7 +1,7 @@
 from tkinter import *
 class Button_Canvas:
     ## ------- 画布按钮类 ------- ##
-    def __init__(self,canvas:Canvas,x1:int,y1:int,x2:int,y2:int,text:str,fontsize:int=15,d_outline:str='gray',d_fill:str='gray',image:PhotoImage=None,func=any,tag=any):
+    def __init__(self,canvas:Canvas,x1:int,y1:int,x2:int,y2:int,text:str,fontsize:int=15,d_outline:str='blue',d_fill:str='blue',image:PhotoImage=None,func=any,tag=any):
         self.canvas = canvas#父控件
         self.value = text
         self.tag = tag
