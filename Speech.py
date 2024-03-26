@@ -247,7 +247,7 @@ while GetChipStatus() != ChipStatus_Type['ChipStatus_Idle']:#等待当前语句�
 
 
 SetReader(Reader_Type["Reader_XuDuo"])#选择播音人许多
-Speech_text("欢迎使用亚博智能语音播报模块",EncodingFormat_Type["GB2312"])
+Speech_text("王广发，我操你妈",EncodingFormat_Type["GB2312"])
 
 while GetChipStatus() != ChipStatus_Type['ChipStatus_Idle']:#等待当前语句播报结束
     time.sleep(0.1)   
